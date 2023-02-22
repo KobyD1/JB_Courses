@@ -4,6 +4,6 @@ public class Dog extends Animal {
 
     public Dog (int leg, String name) {
         int dogLegs = leg;
-        String  DogName = name;
+        String  dogName = name;
     }
 }
