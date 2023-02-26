@@ -5,12 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
 
 import static java.lang.Thread.sleep;
 
-public class CalculatorLinkTest {
+public class DropDownExampleTest {
     public static void main(String[] args) throws InterruptedException {
-        String url = "https://www.calculator.net/";
+        String url = "https://demo.guru99.com/test/newtours/reservation.php";
         System.out.println("Starting...");
         ChromeOptions options = new ChromeOptions();
 
@@ -20,11 +21,11 @@ public class CalculatorLinkTest {
         ChromeDriver driver = new ChromeDriver(options);
 
         driver.get(url);
-        WebElement link = driver.findElement(By.partialLinkText("Mortgage"));
-        link.click();
-WebElement input = driver.findElement(By.partialLinkText("Down"));
-String text = input.getText();
-        System.out.println("Text found the value is "+text);
+        WebElement dropDown = driver.findElement(By.name("passCount"));
+        Select passangers = new Select(dropDown);
+        passangers.selectByIndex(2);
+        passangers.selectByValue("3");
+
 
         sleep(3000);
         driver.close();
