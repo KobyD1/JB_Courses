@@ -27,6 +27,10 @@ public class DropDownExampleTest {
         passangers.selectByValue("3");
 
 
+        WebElement radioBtn = driver.findElement(By.name("tripType"));
+        radioBtn.click();
+
+
         sleep(3000);
         driver.close();
     }
